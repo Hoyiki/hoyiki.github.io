@@ -9,25 +9,29 @@
 </head>
 
 <body>
-<div class="container">
+<div class="container" id="whole">
     
     <h1>Introduction to HTML, CSS and Bootstrap!</h1>
     <h3>1. 下载<a href="http://brackets.io/">Brackets</a>, 在Brackets中加入插件<a href="http://docs.emmet.io/cheat-sheet/">Emmet</a>, 和<a href="https://github.com/acbarbosa1964/acb-bootstrap-snippets">ACB Bootstrap Snippets</a></h3>
     <h3>2. 你的<a href="helloworld.html">第一个</a>网站, 什么是HTML?</h3>
-    <h3>3. 做一个会动的网站, 什么是CSS? <a href="https://daneden.github.io/animate.css/">animate.css</a></h3> 
+    <h3>3. 做一个会<span id="move">动</span>的网站, 什么是CSS? <a href="https://daneden.github.io/animate.css/">animate.css</a></h3> 
     <h3>4. 用<a href='http://getbootstrap.com/'>Bootstrap</a>做个酷炫的个人网站</h3>
     
 </div>
-   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 <script>
-    
+    var whole = $('#whole');
+    var move = $('#move');
+    move.on( "click", function(event){
+        whole.addClass('animated shake');
+        $( this ).off( event );
+    });
 </script>
 
 </body>
 
 </html>
-
 
 
