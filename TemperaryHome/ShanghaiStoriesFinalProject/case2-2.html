@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Case Two</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sofia" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />
+</head> 
+<body>
+    <img src="images/case2-2.png">
+        <a href="desk2.html" id="next" class="hidden" >
+            <img src="images/next_button_on_nb.png" style="display:block; width:112px; height:58px; position:absolute; left: 877px; top: 763px;"/>
+        </a> 
+    <textarea id="input" style="display:block; width:472px; height:114px; position:absolute; left: 584px; top: 379px; background-color: transparent; font: 400 3.5em/125% 'Sofia', Helvetica, Sans-serif; color: #333;"  ></textarea>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+        var nextButton = $('#next');
+        var inputText = $('#input');
+        var answers = ["mandarin dress", "Mandarin Dress", "qi pao", "qipao", "chipao","chi pao"];
+        
+        inputText.bind('input propertychange', function() {
+            if (answers.indexOf(this.value) != -1)                 
+                nextButton.removeClass('hidden').addClass('animated shake');
+        });
+</script>
+</html>

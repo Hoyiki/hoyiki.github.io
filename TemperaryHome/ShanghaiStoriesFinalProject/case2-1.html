@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    Case Two
+    </title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sofia" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/animate.css" rel="stylesheet" type="text/css" />    
+</head>
+
+
+<body>
+    <img src="images/case2-1_no_button.png">
+    <textarea id="input" style="display:block; width:385px; height:111px; position:absolute; left: 522px; top: 543px; background-color: transparent; font: 400 3.5em/125% 'Sofia', Helvetica, Sans-serif; color: #333;"  ></textarea>
+    
+    <a href="case2-2.html" id="next" class="hidden" >
+        <img src="images/next_button_on_nb.png" style="display:block; width:112px; height:58px; position:absolute; left: 877px; top: 763px;" id="nextim" class="hidden"/>
+    </a>
+    
+    
+</body>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+        var nextButton = $('#next');
+        var inputText = $('#input');
+        var nextImage = $('#nextim');
+    
+        var answers = ["People's Square", "people's square", "people square", "peoples square", "人民广场","ren min guang chang"];
+        
+        inputText.bind('input propertychange', function() {
+            if (answers.indexOf(this.value) != -1)    
+                nextImage.removeClass('hidden').addClass('animated shake');
+                nextButton.removeClass('hidden').addClass('animated shake');
+                
+        });
+            
+    
+    
+    
+       
+//    var hidden = true;
+//    if (hidden) {document.getElementById('next').style.visibility = 'hidden';} 
+//    else {document.getElementById('next').style.visibility = 'visible';}
+//    
+//	document.getElementById('form').onsubmit = function()
+//    {
+//		var input = document.getElementById('user_input').value;	
+//	    if (input == "1"){
+//	    	hidden = false;
+//	    }
+//	};
+</script>
+
+</html>
