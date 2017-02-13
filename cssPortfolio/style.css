@@ -1,18 +1,10 @@
-@media (max-width: @screen-xs) {
-    body{font-size: 20px;}
-}
-
-@media (max-width: @screen-sm) {
-    body{font-size: 18px;}
-}
-
-@media (max-width: @screen-lg) {
-    body{font-size: 16px;}
-}
-
 h5{
-    font-size: 1.4em;
-}   
+    font-size: 3em;
+}  
+
+p{
+    font-size: 1em;
+}
 
 .videoWrapperOuter {
   max-width:640px; 
@@ -50,6 +42,7 @@ h5{
 
 .centerText {
     text-align: center;
+    font-size: 1.1em
 }
 
 .thumbnail {
