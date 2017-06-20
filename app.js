@@ -185,6 +185,7 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                 // coordinate frame relative to the camera.  Because they are Cesium
                 // entities, we can ask for their pose in any coordinate frame we know
                 // about.
+                console.log(trackables);
                 var gvuBrochureEntity = app.context.subscribeToEntityById(trackables["Fire"].id);
                 // create a THREE object to put on the trackable
                 var gvuBrochureObject = new THREE.Object3D;
