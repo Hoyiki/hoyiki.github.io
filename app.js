@@ -173,7 +173,7 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
         // the vuforia API is ready, so we can start using it.
         // tell argon to download a vuforia dataset.  The .xml and .dat file must be together
         // in the web directory, even though we just provide the .xml file url here
-        api.objectTracker.createDataSet("resources/datasets/ArgonTutorial.xml").then(function (dataSet) {
+        api.objectTracker.createDataSet("resources/datasets/CyberBoardgame.xml").then(function (dataSet) {
             // the data set has been succesfully downloaded
             // tell vuforia to load the dataset.
             dataSet.load().then(function () {
@@ -185,8 +185,7 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                 // coordinate frame relative to the camera.  Because they are Cesium
                 // entities, we can ask for their pose in any coordinate frame we know
                 // about.
-                console.log(trackables);
-                var gvuBrochureEntity = app.context.subscribeToEntityById(trackables["GVUBrochure"].id);
+                var gvuBrochureEntity = app.context.subscribeToEntityById(trackables["geo"].id);
                 // create a THREE object to put on the trackable
                 var gvuBrochureObject = new THREE.Object3D;
                 scene.add(gvuBrochureObject);
