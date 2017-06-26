@@ -109,27 +109,6 @@ loader.load('resources/fonts/helvetiker_bold.typeface.js', function (font) {
     });
 });
 
-//loading 3d model
-var loader = new THREE.ColladaLoader();
-var model_fire = new THREE.Object3D();
-loader.options.convertUpAxis = true;
-
-loader.load( 'model.dae', function ( collada ) {
- //dummy1.dae
-
-    var dae = collada.scene;
-
-    var skin = collada.skins[ 0 ];
-
-    dae.position.set(0,0,0);//x,z,y- if you think in blender dimensions ;)
-    dae.scale.set(0.001,0.001,0.001);
-
-    model_fire.add(dae);
-
-    //scene.add(dae);
-
-});
-
 
 
 app.vuforia.isAvailable().then(function (available) {
@@ -229,6 +208,29 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                         gvuBrochureObject.position.copy(gvuBrochurePose.position);
                         gvuBrochureObject.quaternion.copy(gvuBrochurePose.orientation);
 
+
+                        //ahhhhhhhhhhhhhhhhhhhhhhhh
+                        var loader = new THREE.ColladaLoader();
+                        var model_fire = new THREE.Object3D();
+                        loader.options.convertUpAxis = true;
+
+                        loader.load( 'model.dae', function ( collada ) {
+
+                            var dae = collada.scene;
+
+                            var skin = collada.skins[ 0 ];
+
+                            dae.position.position.copy(gvuBrochurePose.position);
+                            dae.scale.set(0.001,0.001,0.001);
+
+                            model_fire.add(dae);
+
+                            scene.add(dae);
+
+                        });
+                        //ahhhhhhhhhhhhhhhhhhhhhhhh
+
+
                     }
                     // when the target is first seen after not being seen, the
                     // status is FOUND.  Here, we move the 3D text object from the
@@ -237,7 +239,6 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                     // is LOST.  Here, we move the 3D text object back to the world
                     if (gvuBrochurePose.poseStatus & Argon.PoseStatus.FOUND) {
                         gvuBrochureObject.add(argonTextObject);
-                        gvuBrochureObject.add(model_fire);
                         argonTextObject.position.z = 0;
                     }
                     else if (gvuBrochurePose.poseStatus & Argon.PoseStatus.LOST) {
