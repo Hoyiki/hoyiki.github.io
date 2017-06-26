@@ -55,7 +55,7 @@ argonTextObject.position.z = -0.50;
 userLocation.add(argonTextObject);
 var loader = new THREE.FontLoader();
 loader.load('resources/fonts/helvetiker_bold.typeface.js', function (font) {
-    var textGeometry = new THREE.TextGeometry("argon.js", {
+    var textGeometry = new THREE.TextGeometry("FIREWALL", {
         font: font,
         size: 40,
         height: 5,
@@ -204,15 +204,6 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                     if (gvuBrochurePose.poseStatus & Argon.PoseStatus.KNOWN) {
                         gvuBrochureObject.position.copy(gvuBrochurePose.position);
                         gvuBrochureObject.quaternion.copy(gvuBrochurePose.orientation);
-
-                        var loader = new THREE.ColladaLoader();
-                        loader.options.convertUpAxis = true;
-                        loader.load( 'monster.dae', function ( collada ) {
-                          var object = collada.scene;
-                          object.scale.set( 0.0025, 0.0025, 0.0025 );
-                          object.position.copy(gvuBrochurePose.position);
-                          scene.add( object );
-                        } );
                     }
                     // when the target is first seen after not being seen, the
                     // status is FOUND.  Here, we move the 3D text object from the
