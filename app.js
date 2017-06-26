@@ -49,6 +49,7 @@ app.context.setDefaultReferenceFrame(app.context.localOriginEastUpSouth);
 var uniforms = {
     amplitude: { type: "f", value: 0.0 }
 };
+
 var argonTextObject = new THREE.Object3D();
 argonTextObject.position.z = -0.50;
 userLocation.add(argonTextObject);
@@ -192,6 +193,9 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                 // the updateEvent is called each time the 3D world should be
                 // rendered, before the renderEvent.  The state of your application
                 // should be updated here.
+
+                //add 3d model!!!
+
                 app.context.updateEvent.addEventListener(function () {
                     // get the pose (in local coordinates) of the gvuBrochure target
                     var gvuBrochurePose = app.context.getEntityPose(gvuBrochureEntity);
@@ -200,6 +204,15 @@ IGCNj2HdHViYWFsF2j2f44B7CZG1RQDPZ6uWO5jkUmz9EFJD+kYzO1axEi2n
                     if (gvuBrochurePose.poseStatus & Argon.PoseStatus.KNOWN) {
                         gvuBrochureObject.position.copy(gvuBrochurePose.position);
                         gvuBrochureObject.quaternion.copy(gvuBrochurePose.orientation);
+
+                        var loader = new THREE.ColladaLoader();
+                        loader.options.convertUpAxis = true;
+                        loader.load( 'monster.dae', function ( collada ) {
+                          var object = collada.scene;
+                          object.scale.set( 0.0025, 0.0025, 0.0025 );
+                          object.position.copy(gvuBrochurePose.position);
+                          scene.add( object );
+                        } );
                     }
                     // when the target is first seen after not being seen, the
                     // status is FOUND.  Here, we move the 3D text object from the
