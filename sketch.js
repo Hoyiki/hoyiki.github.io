@@ -1,7 +1,7 @@
 var iPosi;
 var right;
 function setup() {
-  createCanvas(displayWidth, displayHeight);
+  createCanvas(1409, 880);
   background(0);
   noStroke();
   iPosi = width*0.5;
