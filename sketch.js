@@ -1,5 +1,5 @@
 function setup() {
-  createCanvas(1334, 750);
+  createCanvas(screen.width, screen.height);
   background(0);
   noStroke();
 }
