@@ -1,0 +1,196 @@
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+a{
+  color: black;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+.project-title{
+  /* font-size: 30pt;
+  font-weight:lighter;
+  color: darkgray; */
+  font-size: 15pt;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+}
+.project-date{
+  /* font-size: 15pt;
+  font-style: italic;
+  color: black; */
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(220,220,220);
+}
+.menu-block{
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.intro-block{
+  margin: 10px;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 264px;
+  left: -252px;
+  text-align: right;
+}
+
+.side-links{
+  transform: rotate(90deg);
+  position: absolute;
+  right: -80px;
+  top: 115px;
+}
+
+.link{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+.menu-img{
+  width: 800px;
+}
+
+.project-img-container{
+  text-align: center;
+  display: block;
+}
+
+.menu-img-stapler{
+  position: absolute;
+  width: 70%;
+  left: 200px;
+}
+.big-title{
+  font-size: 30pt;
+  font-family: 'Roboto', sans-serif;
+  text-transform: lowercase;
+  color: rgb(240,240,240);
+  margin: 0 auto;
+  width: 800px;
+}
+
+.tail{
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  /* text-transform: lowercase; */
+}
+
+.page-project-title {
+    font-size: 35pt;
+    font-family: 'Roboto', sans-serif;
+    text-transform: lowercase;
+    /* color: rgb(225,225,225); */
+}
+.page-project-intro{
+  /* font-size: 15pt;
+  font-style: italic;
+  color: black; */
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+  /* color: rgb(220,220,220); */
+}
+
+#movetext {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: 1s shake infinite alternate;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  25% { transform: skewX(-15deg); }
+  30% { transform: skewX(15deg); }
+  35% { transform: skewX(-15deg); }
+  40% { transform: skewX(15deg); }
+  45% { transform: skewX(0deg); }
+  100% { transform: skewX(0deg); }
+}
+
+@media screen and (max-width: 500px) {
+  .project-img-sm{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .menu-block{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .menu-img{
+    width: 100%;
+  }
+
+  .big-title{
+    width: 100%;
+  }
+
+  .side-links{
+    transform: rotate(0);
+    position:relative;
+    top: 0;
+    left: 0;
+  }
+
+  .intro-block{
+    margin: 10px;
+    transform: rotate(0);
+    position:relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+  }
+  .project-title{
+    position: relative;
+    left:10px;
+  }
+  .project-date{
+    position: relative;
+    left: 10px;
+  }
+  .page-project-title{
+    position: relative;
+    left:10px;
+  }
+  .page-project-intro{
+    position: relative;
+    left: 10px;
+  }
+  .project-img-container{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+  .project-img{
+    width: 100%;
+  }
+  /* a{
+    font-size: 30pt;
+  }
+  .big-title{
+    font-size: 60pt;
+  } */
+
+}
