@@ -3,7 +3,7 @@ p {
   font-size: 15pt;
 }
 
-a{
+.side-links a{
   color: black;
   margin: 10px;
   font-family: 'Roboto', sans-serif;
@@ -16,8 +16,15 @@ a{
   color: darkgray; */
   font-size: 15pt;
   font-family: 'Roboto', sans-serif;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
+.project-title-gray {
+  color: rgb(220,220,220);
+}
+.project-title-gray a{
+  color: rgb(220,220,220);
+}
+
 .project-date{
   /* font-size: 15pt;
   font-style: italic;
@@ -162,22 +169,7 @@ a{
     left: 0;
     text-align: left;
   }
-  .project-title{
-    position: relative;
-    left:10px;
-  }
-  .project-date{
-    position: relative;
-    left: 10px;
-  }
-  .page-project-title{
-    position: relative;
-    left:10px;
-  }
-  .page-project-intro{
-    position: relative;
-    left: 10px;
-  }
+
   .project-img-container{
     text-align: center;
     width: 100%;
