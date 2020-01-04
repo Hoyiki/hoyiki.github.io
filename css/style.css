@@ -23,6 +23,10 @@ p {
 }
 .project-title-gray a{
   color: rgb(220,220,220);
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+  color: rgb(220,220,220);
 }
 
 .project-date{
@@ -89,7 +93,11 @@ p {
   text-align: center;
   display: block;
   text-decoration: none;
+  color: black;
   /* text-transform: lowercase; */
+}
+.tail a{
+  color: black;
 }
 
 .page-project-title {
