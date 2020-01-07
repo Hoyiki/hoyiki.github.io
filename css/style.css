@@ -165,11 +165,11 @@ p {
     transform: rotate(0);
     position:relative;
     top: 0;
-    left: 0;
+    left: -10px;
   }
 
   .intro-block{
-    margin: 10px;
+    margin: 0px;
     transform: rotate(0);
     position:relative;
     top: 0;
