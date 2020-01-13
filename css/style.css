@@ -71,6 +71,15 @@ p {
   text-align: center;
   display: block;
 }
+.project-img{
+  width: 1000px;
+}
+.project-img-full{
+  width: 100%;
+}
+.project-img-big{
+  width: 1200px;
+}
 
 .menu-img-stapler{
   position: absolute;
@@ -100,11 +109,19 @@ p {
 }
 
 .page-project-title {
-    font-size: 35pt;
+    font-size: 25pt;
     font-family: 'Roboto', sans-serif;
-    text-transform: lowercase;
+    /* text-transform: lowercase; */
     /* color: rgb(225,225,225); */
 }
+.project-subtitle{
+  font-size: 20pt;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  text-align: center;
+
+}
+
 .page-project-intro{
   /* font-size: 15pt;
   font-style: italic;
@@ -192,4 +209,10 @@ p {
     font-size: 60pt;
   } */
 
+}
+
+@media screen and (max-width: 1200px) {
+  .project-img-big{
+    width: 100%;
+  }
 }
