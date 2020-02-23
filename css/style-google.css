@@ -1,0 +1,36 @@
+body{
+  /* font-family: 'Roboto', sans-serif; */
+
+  font-family: 'Lato', sans-serif;
+  background-color: #a7a792;
+}
+.school{
+}
+.title-block{
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 40pt;
+  color: white;
+}
+
+.tail{
+  font-size: 10pt;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  /* text-transform: lowercase; */
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: black;
+}
