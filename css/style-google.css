@@ -35,9 +35,32 @@ a:hover{
   color: black;
 }
 
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 4px solid white;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 40pt;
+    width:900px;
+}
+
+input[value]:not([value=""]){
+    border-bottom: 0px solid white;
+}
+
+
+input:focus{
+  color:black;
+  border-bottom: 0px solid white;
+}
+
 @media screen and (max-width: 1000px) {
   .title-block{
     width: 100%;
+  }
+  input[type=text] {
+    width: 80%;
   }
 }
 
