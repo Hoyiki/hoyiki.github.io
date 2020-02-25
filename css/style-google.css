@@ -3,6 +3,15 @@ body{
 
   font-family: 'Lato', sans-serif;
   background-color: #a7a792;
+  /* background-color: #a78a88; */
+}
+
+.new-student{
+  background-color: #a78a88;
+}
+
+.old-student{
+  background-color:#728ca0;
 }
 .school{
 }
@@ -53,6 +62,25 @@ input[value]:not([value=""]){
 input:focus{
   color:black;
   border-bottom: 0px solid white;
+}
+
+.mentor-block{
+  outline: solid;
+  outline-offset: 15px;
+  cursor: pointer;
+}
+
+.mentor-block:hover{
+  color: black;
+}
+
+.new-group{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.new-group:hover{
+  color: black;
 }
 
 @media screen and (max-width: 1000px) {
