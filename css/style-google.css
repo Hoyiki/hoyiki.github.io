@@ -83,13 +83,23 @@ input:focus{
   color: black;
 }
 
-@media screen and (max-width: 1000px) {
+
+@media screen and (max-width: 1060px) {
   .title-block{
     width: 100%;
   }
   input[type=text] {
     width: 80%;
   }
+
+  .mentor-block{
+    outline-offset: 0px;
+  }
+
+  input[type=text] {
+    font-size: 25pt;
+  }
+
 }
 
 @media (max-width: 700px) {
