@@ -152,6 +152,18 @@ p {
   35% { transform: skewX(-15deg); }
   40% { transform: skewX(15deg); }
   45% { transform: skewX(0deg); }
+  50% { transform: skewX(-15deg); }
+  55% { transform: skewX(15deg); }
+  60% { transform: skewX(-15deg); }
+  65% { transform: skewX(15deg); }
+  70% { transform: skewX(0deg); }
+
+  75% { transform: skewX(-15deg); }
+  80% { transform: skewX(15deg); }
+  85% { transform: skewX(-15deg); }
+  90% { transform: skewX(15deg); }
+  95% { transform: skewX(0deg); }
+
   100% { transform: skewX(0deg); }
 }
 
