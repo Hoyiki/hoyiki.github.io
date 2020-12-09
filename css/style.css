@@ -132,6 +132,24 @@ p {
   /* color: rgb(220,220,220); */
 }
 
+#fliptext {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: 2s flip infinite alternate;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+@keyframes flip {
+  0% { transform: rotateX(0deg); }
+  20% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+
+
+
 #movetext {
   /* Start the shake animation and make the animation last for 0.5 seconds */
   animation: 1s shake infinite alternate;
