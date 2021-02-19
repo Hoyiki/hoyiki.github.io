@@ -1,0 +1,109 @@
+body{
+  /* font-family: 'Roboto', sans-serif; */
+
+  font-family: 'Lato', sans-serif;
+  background-color: #a7a792;
+  /* background-color: #a78a88; */
+}
+
+.new-student{
+  background-color: #a78a88;
+}
+
+.old-student{
+  background-color:#728ca0;
+}
+.school{
+}
+.title-block{
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  font-size: 40pt;
+  color: white;
+}
+
+.tail{
+  font-size: 10pt;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  /* text-transform: lowercase; */
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: black;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 4px solid white;
+    font-family: 'Lato', sans-serif;
+    color: white;
+    font-size: 40pt;
+    width:900px;
+}
+
+input[value]:not([value=""]){
+    border-bottom: 0px solid white;
+}
+
+
+input:focus{
+  color:black;
+  border-bottom: 0px solid white;
+}
+
+.mentor-block{
+  outline: solid;
+  outline-offset: 15px;
+  cursor: pointer;
+}
+
+.mentor-block:hover{
+  color: black;
+}
+
+.new-group{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.new-group:hover{
+  color: black;
+}
+
+
+@media screen and (max-width: 1060px) {
+  .title-block{
+    width: 100%;
+  }
+  input[type=text] {
+    width: 80%;
+  }
+
+  .mentor-block{
+    outline-offset: 0px;
+  }
+
+  input[type=text] {
+    font-size: 25pt;
+  }
+
+}
+
+@media (max-width: 700px) {
+  .title-block{
+    font-size: 25pt;
+  }
+}
