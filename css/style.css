@@ -1,0 +1,248 @@
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+.side-links a{
+  color: black;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+.project-title{
+  /* font-size: 30pt;
+  font-weight:lighter;
+  color: darkgray; */
+  font-size: 15pt;
+  font-family: 'Roboto', sans-serif;
+  /* text-transform: capitalize; */
+}
+.project-title-gray {
+  color: rgb(220,220,220);
+}
+.project-title-gray a{
+  color: rgb(220,220,220);
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+  color: rgb(220,220,220);
+}
+
+.project-date{
+  /* font-size: 15pt;
+  font-style: italic;
+  color: black; */
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(220,220,220);
+}
+.menu-block{
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.intro-block{
+  margin: 10px;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 264px;
+  left: -252px;
+  text-align: right;
+}
+
+.side-links{
+  transform: rotate(90deg);
+  position: absolute;
+  right: -80px;
+  top: 115px;
+}
+
+.link{
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+}
+
+.menu-img{
+  width: 800px;
+}
+
+.project-img-container{
+  text-align: center;
+  display: block;
+}
+.project-img{
+  width: 1000px;
+}
+.project-img-full{
+  width: 100%;
+}
+.project-img-big{
+  width: 1200px;
+}
+
+.menu-img-stapler{
+  position: absolute;
+  width: 70%;
+  left: 200px;
+}
+.big-title{
+  font-size: 30pt;
+  font-family: 'Roboto', sans-serif;
+  text-transform: lowercase;
+  color: rgb(240,240,240);
+  margin: 0 auto;
+  width: 800px;
+}
+
+.tail{
+  font-size: 10pt;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  color: black;
+  /* text-transform: lowercase; */
+}
+.tail a{
+  color: black;
+}
+
+.page-project-title {
+    font-size: 25pt;
+    font-family: 'Roboto', sans-serif;
+    /* text-transform: lowercase; */
+    /* color: rgb(225,225,225); */
+}
+.project-subtitle{
+  font-size: 20pt;
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  text-align: center;
+
+}
+
+.page-project-intro{
+  /* font-size: 15pt;
+  font-style: italic;
+  color: black; */
+  font-style: normal;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15pt;
+  /* color: rgb(220,220,220); */
+}
+
+#fliptext {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: 2s flip infinite alternate;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+@keyframes flip {
+  0% { transform: rotateX(0deg); }
+  20% { transform: rotateX(0deg); }
+  50% { transform: rotateX(180deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+
+
+
+#movetext {
+  /* Start the shake animation and make the animation last for 0.5 seconds */
+  animation: 1s shake infinite alternate;
+
+  /* When the animation is finished, start again */
+  animation-iteration-count: infinite;
+  display: inline-block;
+}
+
+@keyframes shake {
+  0% { transform: skewX(-15deg); }
+  5% { transform: skewX(15deg); }
+  10% { transform: skewX(-15deg); }
+  15% { transform: skewX(15deg); }
+  20% { transform: skewX(0deg); }
+  25% { transform: skewX(-15deg); }
+  30% { transform: skewX(15deg); }
+  35% { transform: skewX(-15deg); }
+  40% { transform: skewX(15deg); }
+  45% { transform: skewX(0deg); }
+  50% { transform: skewX(-15deg); }
+  55% { transform: skewX(15deg); }
+  60% { transform: skewX(-15deg); }
+  65% { transform: skewX(15deg); }
+  70% { transform: skewX(0deg); }
+
+  75% { transform: skewX(-15deg); }
+  80% { transform: skewX(15deg); }
+  85% { transform: skewX(-15deg); }
+  90% { transform: skewX(15deg); }
+  95% { transform: skewX(0deg); }
+
+  100% { transform: skewX(0deg); }
+}
+
+@media screen and (max-width: 500px) {
+  .project-img-sm{
+    width: 100%;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+  .menu-block{
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .menu-img{
+    width: 100%;
+  }
+
+  .big-title{
+    width: 100%;
+  }
+
+  .side-links{
+    transform: rotate(0);
+    position:relative;
+    top: 0;
+    left: -10px;
+  }
+
+  .intro-block{
+    margin: 0px;
+    transform: rotate(0);
+    position:relative;
+    top: 0;
+    left: 0;
+    text-align: left;
+  }
+
+  .project-img-container{
+    text-align: center;
+    width: 100%;
+    margin: 0;
+  }
+  .project-img{
+    width: 100%;
+  }
+  /* a{
+    font-size: 30pt;
+  }
+  .big-title{
+    font-size: 60pt;
+  } */
+
+}
+
+@media screen and (max-width: 1200px) {
+  .project-img-big{
+    width: 100%;
+  }
+}
