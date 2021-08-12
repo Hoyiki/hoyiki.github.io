@@ -1,0 +1,172 @@
+<body>
+<canvas id="mCanvas">
+</canvas>
+</body>
+<script src="https://threejs.org/build/three.js"></script>
+<script>
+// Var Init
+    var renderer, scene, camera, box, transformControl, orbitControl, geometry, material, poseMatrix;
+    var mPoints = [];
+    //Box coordinate
+    var xBCordinate, yBCordinate, zBCordinate, isScaled, posVec, startPosVec, lookPos, helper;
+    var process = false;
+    var scanActive = false;
+    var pointArr = [];
+    
+    var cameraSpherical;
+    
+     init();
+    animate();
+
+  function init() {
+
+        // renderer
+       renderer = new THREE.WebGLRenderer({canvas: document.getElementById("mCanvas"),
+            alpha: true});
+       renderer.setSize( window.innerWidth, window.innerHeight );
+       document.body.appendChild( renderer.domElement );
+        renderer.setClearColor(0xffffff, 0);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // scene
+        scene = new THREE.Scene();
+
+        // camera
+        camera = new THREE.PerspectiveCamera(
+            45,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+
+        camera.up.set(0, 0, 1); // Definition of coordinationsystem
+        
+        // set initial scale position of camera 
+        camera.position.x = 0;
+        camera.position.y = -0.5;
+        camera.position.z = 0.15;  
+        
+        scene.add(camera);
+        
+        cameraSpherical = new THREE.Spherical( camera.position );
+        
+        // set position to look at 
+        camera.lookAt(0,2.5,-0.2);
+        
+        // apply values
+        camera.updateMatrix();
+
+        // light
+        var light = new THREE.HemisphereLight( 0xeeeeee, 0x888888, 1 );
+        light.position.set( 0, -0.75, 2.5 );
+        scene.add(light);
+
+
+        placeBox();
+
+
+    }
+    function placeBox()
+    {
+        
+
+        geometry = new THREE.BoxGeometry(0.5, 1, 0.5); //3,5,3
+        material = new THREE.MeshLambertMaterial({color: 0xfece46});
+        
+        box = new THREE.Mesh(geometry, material);
+        
+        box.position.set(0, 0, 0);
+        box.updateMatrix();
+        scene.add(box);
+
+    }
+    function animate() {
+        requestAnimationFrame(animate);
+        if(process == false){
+        setCurrentPose();
+        }
+
+        renderer.render(scene, camera);
+    }
+    
+    function setCurrentPose(){
+        process = true;
+        
+        // this is where I receive the position data via Android
+        // but lets try using random numbers between 0.01 - 0.99 (which are the results interval of dso)
+        
+        moveRotateCamera();
+    }
+      function moveRotateCamera(){
+       // Create Vector to work with
+      /* posVec = new THREE.Vector3();
+          
+       posVec.x = getRandomFloat(0.01, 0.05);
+       posVec.y = getRandomFloat(0.01, 0.05);
+       posVec.z = getRandomFloat(0.01, 0.02);
+    
+          
+        camera.position.x += posVec.x;
+        camera.position.y += posVec.y; // minus initial scale position 
+        camera.position.z += posVec.z; 
+        */
+        cameraSpherical.radius = 5;
+        cameraSpherical.phi += getRandomFloat(0.001, 0.015);
+        cameraSpherical.theta += getRandomFloat(0.001, 0.015);
+        let xyz = new THREE.Vector3().setFromSpherical( cameraSpherical );
+        camera.position.x = xyz.x;
+        camera.position.y = xyz.y;
+        camera.position.z = xyz.z;
+        
+        camera.lookAt(0,0,0);
+        
+        camera.updateMatrix();
+        
+        
+        
+     //   camera.updateMatrix(); <- seem to change nothing such as UpdateWorldMatrix() etc.    
+     
+     // camera rotation tried to calculate with quaternions (result NaN) and/or euler by using former and current point.
+        process = false;
+    }
+    function getRandomFloat(min, max) {
+  return Math.random() * (max - min) + min;
+}   
+
+
+// My attempts in trying to calculate the rotation
+/*
+function setQuaternionRotation(poseMatrix){
+        // TODO: delete if not needed!
+        // adapted from http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm, 2.12.2019, 2.34pm
+        mQuaternion = new THREE.Quaternion();
+
+        // Calculate Angle w
+        mQuaternion.w = ((Math.sqrt(Math.max(0, (1.0 + poseMatrix.elements[0] + poseMatrix.elements[5] + poseMatrix.elements[10])))/2.0));
+
+        //Sign x,y,z values of quaternion
+        mQuaternion.x = ((Math.sqrt(Math.max(0, (1.0 + poseMatrix.elements[0] - poseMatrix.elements[5] - poseMatrix.elements[10])))/2.0));
+        mQuaternion.y = ((Math.sqrt(Math.max(0, (1.0 - poseMatrix.elements[0] + poseMatrix.elements[5] - poseMatrix.elements[10])))/2.0));
+        mQuaternion.y = ((Math.sqrt(Math.max(0, (1.0 - poseMatrix.elements[0] - poseMatrix.elements[5] + poseMatrix.elements[10])))/2.0));
+
+        //Sign element values
+        mQuaternion.x = (Math.sign(mQuaternion.x * (poseMatrix.elements[6] - poseMatrix.elements[9])));
+        mQuaternion.y = (Math.sign(mQuaternion.y * (poseMatrix.elements[8] - poseMatrix.elements[2])));
+        mQuaternion.z = (Math.sign(mQuaternion.z * (poseMatrix.elements[1] - poseMatrix.elements[4])));
+
+        // debug
+        console.log("QuaternionVal: "+mQuaternion.x+ ", " +mQuaternion.y+", "+mQuaternion.z+", "+mQuaternion.w);
+
+        camera.applyQuaternion(mQuaternion);
+        camera.quaternion.normalize();
+
+
+        // debug
+        console.log("newCamRotation: "+camera.rotation.x +", "+camera.rotation.y+", "+ camera.rotation.z);
+
+   //     camera.updateMatrix(true);
+    }
+   
+*/
+    </script>
